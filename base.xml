@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <Pet>
+    <instance id="1">
+      <id>1</id>
+      <name>Кисед</name>
+      <kind>Кот</kind>
+      <breed>Дворняжка</breed>
+      <gender>Ж</gender>
+      <size>М</size>
+    </instance>
+    <instance id="2">
+      <id>2</id>
+      <name>Гами</name>
+      <kind>Собака</kind>
+      <breed>Дворняжка</breed>
+      <gender>М</gender>
+      <size>Б</size>
+    </instance>
+    <instance id="3">
+      <id>3</id>
+      <name>Собака</name>
+      <kind>Алси</kind>
+      <breed>Овчарка</breed>
+      <gender>Ж</gender>
+      <size>Б</size>
+    </instance>
+  </Pet>
+  <Aviary>
+    <instance id="2">
+      <id>2</id>
+      <size>Маленький</size>
+      <pet_id>[1]</pet_id>
+    </instance>
+    <instance id="1">
+      <id>1</id>
+      <size>Большой</size>
+      <pet_id>[2, 3]</pet_id>
+    </instance>
+  </Aviary>
+</root>
