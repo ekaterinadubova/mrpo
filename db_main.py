@@ -9,23 +9,18 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# Создание экземпляров волонтёров
 user1 = User(name="Zolotoeva Anna", phone="123456789")
 user2 = User(name="Ramid Alina", phone="987654321")
 
-# Создание экземпляров животных
 pet1 = Pet(kind="Cat", name="Cused", breed="Britain", gender="Male", size="Small")
 pet2 = Pet(kind="Dog", name="Baloon", breed="Shepherd", gender="Female", size="Big")
 
-# Создание экземпляров вольеров
 aviary1 = Aviary(size="Big")
 aviary2 = Aviary(size="Small")
 
-# Добавление животных в вольеры
 aviary1.pets.append(pet2)
 aviary2.pets.append(pet1)
 
-# Добавление данных в базу данных
 session.add(user1)
 session.add(user2)
 session.add(pet1)
