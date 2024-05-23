@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from db_setup import Base, Food, User, Aviary, Pet
 
-DATABASE_URL = "sqlite:///aviaries.db"
+DATABASE_URL = "sqlite:///pet.db"
 
 engine = create_engine(DATABASE_URL)
 Base.metadata.create_all(engine)
