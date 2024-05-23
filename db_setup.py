@@ -3,7 +3,6 @@ from sqlalchemy.orm import relationship, declarative_base, sessionmaker, backref
 
 Base = declarative_base()
 
-# Таблица связей для определения соотношения "многие ко многим" между вольером и домашним животным
 aviary_pet_association = Table('aviary_pet', Base.metadata,
     Column('aviary_id', Integer, ForeignKey('aviaries.id')),
     Column('pet_id', Integer, ForeignKey('pets.id'))
@@ -43,26 +42,10 @@ class Pet(Base):
     def __repr__(self):
         return f"<Pet(id={self.id}, name='{self.name}', kind='{self.kind}', breed='{self.breed}', gender='{self.gender}', size='{self.size}')>"
 
-class Food(Base):
-    __tablename__ = 'foods'
-
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String, nullable=False)
-    pets = relationship('Pets', secondary=aviary_pet_association, back_populates='aviaries')
-    # установка отношений
-    users = relationship('User', back_populates='foods')
-    aviaries = relationship('Aviary', back_populates='pets')
-
-    def __repr__(self):
-        return f"<Food(id={self.id}, name='{self.name}')>"
-
-User.food_id = Column(Integer, ForeignKey('foods.id'))
-User.food = relationship('Food', back_populates='users')
-
 Aviary.pet_id = Column(Integer, ForeignKey('pets.id'))
 Aviary.pet = relationship('Pet', back_populates='aviaries')
 
-DATABASE_URL = 'sqlite:///aviaries.db'  # or any other database URL
+DATABASE_URL = 'sqlite:///pet.db'
 
 def setup_database():
     engine = create_engine(DATABASE_URL)
