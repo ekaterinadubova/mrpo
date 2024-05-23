@@ -46,7 +46,6 @@ class XMLRepository(ABCRepository):
         root, _ = self.create_or_open_xml()  # Используем только корневой элемент
         self.write_data_to_class_directory(root, obj)
 
-        # Перезаписываем весь XML-документ с новыми данными
         with open(self.file_path, 'wb') as f:
             self.tree.write(f, xml_declaration=True, encoding='utf-8', pretty_print=True)
 
