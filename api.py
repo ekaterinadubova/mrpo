@@ -70,7 +70,6 @@ def create_aviary(aviary: AviaryCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_aviaries)
 
-    # Запись действия в JSON файл
     data = {"action": "create_aviary", "aviary_id": db_aviaries.id, "aviary_data": aviary.dict()}
     write_to_json(data, "actions.json")
 
@@ -85,7 +84,6 @@ def create_pet(pet: PetCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_pets)
 
-    # Запись действия в JSON файл
     data = {"action": "create_pet", "pet_id": db_pets.id, "pet_data": pet.dict()}
     write_to_json(data, "actions.json")
 
