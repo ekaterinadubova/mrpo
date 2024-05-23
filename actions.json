@@ -1,0 +1,4 @@
+{"action": "create_user", "user_id": 23, "user_data": {"name": "keke", "phone": "93544382374"}}
+{"action": "create_user", "user_id": 24, "user_data": {"name": "kskdsfksd", "phone": "9340259245023"}}
+{"action": "create_aviary", "aviary_id": 25, "aviary_data": {"size": "small"}}
+{"action": "create_pet", "pet_id": 30, "pet_data": {"name": "jdfsjsdf", "kind": "strjfjing", "breed": "strkfkdfsing", "gender": "strikdfskdfsng", "size": "strkfdkdfing"}}
