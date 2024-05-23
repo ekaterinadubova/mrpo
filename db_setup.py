@@ -3,7 +3,6 @@ from sqlalchemy.orm import relationship, declarative_base, sessionmaker
 
 Base = declarative_base()
 
-# Таблица связей для определения соотношения "многие ко многим" между вольером и домашним животным
 aviary_pet_association = Table('aviary_pet', Base.metadata,
     Column('aviary_id', Integer, ForeignKey('aviaries.id')),
     Column('pet_id', Integer, ForeignKey('pets.id'))
