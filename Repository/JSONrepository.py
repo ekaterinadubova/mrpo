@@ -45,7 +45,7 @@ class JSONRepository(ABCRepository):
             return
 
         class_name = obj.__class__.__name__
-        obj_id = str(obj.id)  # Преобразование ID в строку для корректного сравнения
+        obj_id = str(obj.id)
 
         if class_name not in data:
             print(f"No objects of type {class_name} found.")
@@ -65,7 +65,6 @@ class JSONRepository(ABCRepository):
             print("No data found.")
             return []
 
-        # Преобразование словаря в список объектов
         all_objects = []
         for class_name, objects in data.items():
             for obj_id, obj_data in objects.items():
